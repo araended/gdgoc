@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portofolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Header</h1>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Hero</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><button id="theme-toggle" class="toggle-btn" aria-label="Toggle Dark Mode">Dark Mode</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Hero</h2>
+            <h1>HI! I'm <span class="text-stroke">ARA</span></h1>
+            <p>
+                A freshman student driven by sheer curiosity about how systems around me works. Currently exploring tech with GDGOC.
+                When the bugs get too loud, you'll find me catching a solo movie for a quick reset.
+            </p>           
+        </div>
+    </section>
+
+    <section id="skills" class="skill-section">
+        <div class="container">
+            <h2>Skills</h2>
+            <p>currently willing to learn : </p>
+            <div class="skill-grid">
+                <article class="skill-card">
+                    <h3>Web Development</h3>
+                    <p>building, maintaining, and designing websites and web applications</p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Cybersecurity</h3>
+                    <p>the practice of protecting digital systems, networks, devices, and data from unauthorized access, cyberattacks, and damage.</p>
+                </article>            
+
+                <article class="skill-card">
+                    <h3>Embedded System</h3>
+                    <p>design a specialized computer system that can perform a dedicated function, combining hardware, software, and firmware to operate under certain constraints</p>
+                </article>            
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <div class="footer-links">
+            <a href="https://github.com/araended" target="_blank">GitHub</a>
+            <a href="mailto:arrsyakira@gmail.com">Email</a>
+        </div>
+    </footer>
+
+    <script>
+            const toggleBtn = document.getElementById('theme-toggle');
+            
+            toggleBtn.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                if (document.body.classList.contains('dark-mode')) {
+                    toggleBtn.textContent = 'Light Mode';
+                } else {
+                    toggleBtn.textContent = 'Dark Mode';
+                }
+            });
+    </script>
+</body>
+
+</html>

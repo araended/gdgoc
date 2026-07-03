@@ -1,0 +1,252 @@
+:root{
+    /* Palet Light Mode */
+    --bg-color: #fafafa;
+    --header-bg: #f2dccb;
+    --card-bg: #ffffff;
+    --footer-bg: #4f8fa8;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --accent-color: #ff007f; 
+    --border-color: #1a1a1a;
+    
+    --border-thick: 3px solid var(--border-color);
+    --shadow-flat: 5px 5px 0px var(--border-color);
+    --shadow-flat-hover: 2px 2px 0px var(--border-color);
+    --transition-speed: 0.25s;
+    --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body.dark-mode{
+    --bg-color: #121212;
+    --header-bg: #575757;
+    --card-bg: #1e1e1e;
+    --footer-bg: #426370;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #ffffff;
+    --accent-color: #2dd4bf; 
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--font-primary);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.container{
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+h2{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+/* Header & Nav (flexbox) */
+header{
+    width: 100%;
+    border-bottom: var(--accent-color);
+    background-color: var(--header-bg);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1{
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all var(--transition-speed) ease;
+}
+
+/* Animasi untuk nav */
+nav ul li a:hover{
+    background-color: var(--text-main);
+    color: var(--bg-color);
+}
+
+/* Toggle Dark Mode */
+.toggle-btn {
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    border: 2px solid var(--border-color);
+    font-family: var(--font-primary);
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--border-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.toggle-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px var(--border-color);
+}
+
+.toggle-btn:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px var(--border-color);
+}
+
+/* Hero Section */
+#hero{
+    padding: 80px 0;
+    border-bottom: var(--border-thick);
+}
+
+#hero h1{
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+#hero h1 .text-stroke{
+    font-size: 10rem;
+    color: transparent;
+    -webkit-text-stroke: 3px var(--border-color);
+}
+
+#hero p{
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    letter-spacing: -0.01em;
+}
+
+/* Skill section */
+.skill-section{
+    padding: 80px 0;
+    border-bottom: var(--border-thick);
+}
+
+.skill-section p{
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+}
+
+.skill-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.skill-card{
+    background-color: var(--card-bg);
+    border: var(--border-thick);
+    box-shadow: var(--shadow-flat);
+    border-radius: 12px;
+    padding: 28px;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, background-color var(--transition-speed);
+}
+
+.skill-card h3{
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+}
+
+.skill-card p{
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* Animasi skill card */
+.skill-card:hover{
+    transform: translate(3px, 3px);
+    box-shadow: var(--shadow-flat-hover);
+}
+
+/* Footer */
+footer{
+    padding: 40px 0;
+    background-color: var(--footer-bg);
+}
+
+.footer-links{
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.footer-links a{
+    text-decoration: none;
+    color: var(--bg-color);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    border-bottom: 2px solid transparent;
+    transition: border-color var(--transition-speed) ease;
+}
+
+/* Animasi footer */
+.footer-links a:hover{
+    border-color: var(--accent-color);
+}
+
+/* Media queries */
+@media (max-width: 768px){
+    header .container{
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    #hero h1{
+        font-size: 2.5rem;
+    }
+    
+    .skill-grid{
+        grid-template-columns: 1fr; 
+    }
+
+    .skill-card{
+        margin-bottom: 16px;
+    }
+}
